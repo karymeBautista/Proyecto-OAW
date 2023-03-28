@@ -98,6 +98,8 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-image: url("https://i.pinimg.com/736x/df/60/b1/df60b16e490bdeaa878f1c1e952b4327.jpg");
+  background-size: cover;
 }
 
 .noticia {
