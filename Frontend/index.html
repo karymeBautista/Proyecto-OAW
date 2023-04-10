@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="new.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
     integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -23,7 +23,8 @@
     <span>
       <input type="search" placeholder="Search" id="search" class="search" />
       <input type="button" id="btnActualizar" value="Actualizar noticias" class="btnInteraccion" />
-      <input type="button" id="btnGuardar" value="Agregar RSS" class="btnInteraccion" data-bs-toggle="modal" data-bs-target="#exampleModal"/>
+      <!--<input type="button" id="btnGuardar" value="Agregar RSS" class="btnInteraccion" data-bs-toggle="modal" data-bs-target="#exampleModal"/>-->
+      <input type="button" id="btmExample" value="Agregar RSS" class="btnInteraccion" onclick="openExample()"/>
     </span>
 
   </header>
@@ -42,8 +43,26 @@
     <a href="#" class='move moveLeft' id="anterior">Anterior</a> 
     <a href="#" class='move moveRight' id="siguiente">Siguiente</a>
   </div>
-  
+
+  <dialog class="exmodal" id="exMainModal">
+    <div class="modal-header">
+      <h1>Agregar RSS</h1>
+      <button class="btn-close" onclick="closeExample()"></button>
+    </div>
+    <div class="modal-body" id="bodyModal" >
+      <input type="text" placeholder="Ingrese RSS" id="rss" class="rss" name="title[]"/>
+      <div id="nuevoInput"></div><br>
+      <input type="button" id="btnAgregarRSS" value="+" class="btnInteraccion"/> 
+    </div>
+    <div class="modal-footer">
+      <button id="btnCerrarModal" class="btnInteraccion" onclick="closeExample()">Cerrar</button>
+      <button type="button" id="btnAgregar" class="btnInteraccion" onclick="closeExample()">Agregar RSS('s)</button>
+    </div>
+  </dialog>
+
+
   <!-- Modal -->
+  <!-- 
   <div class="modal fade" id="exampleModal" tabindex="-1" data-bs-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -64,6 +83,7 @@
       </div>
     </div>
   </div>
+  -->
   <script src="script.js"></script>
 </body>
 

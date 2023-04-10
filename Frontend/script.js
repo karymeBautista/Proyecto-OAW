@@ -42,6 +42,16 @@ $(function () {
 
 })
 
+//---ejemplo
+const exmodal = document.getElementById("exMainModal");
+const openExample = () => {
+  exmodal.showModal();
+}
+
+const closeExample = ()  => {
+  exmodal.close();
+}
+
 //-----------------------------------------------------------------------------------------------------------------
 
 document.getElementById("search").onsearch = function () { buscar() };
