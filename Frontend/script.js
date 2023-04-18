@@ -5,8 +5,6 @@ let busquedaRealizada = "";
 var loading = document.getElementById("loading-overlay");
 loading.style.display = "none";
 
-//-----------------------------------------------------------------------------------------------------------------
-
 $(function () {  
 
   $.ajax({
@@ -42,7 +40,6 @@ $(function () {
 
 })
 
-//---ejemplo
 const exmodal = document.getElementById("exMainModal");
 const openExample = () => {
   exmodal.showModal();
@@ -52,13 +49,10 @@ const closeExample = ()  => {
   exmodal.close();
 }
 
-//-----------------------------------------------------------------------------------------------------------------
-
 document.getElementById("search").onsearch = function () { buscar() };
 
 function buscar() {
   loading.style.display = "block";
-
   var busqueda = document.getElementById("search").value;
   busquedaRealizada=busqueda;
   desde=0;
@@ -100,10 +94,8 @@ function buscar() {
     }
   });
   loading.style.display = "none";
-
 }
 
-//-----------------------------------------------------------------------------------------------------------------
 
 $('#btnActualizar').click(function () {
   Swal.fire({
@@ -146,8 +138,6 @@ $('#btnActualizar').click(function () {
 
     }
   })
-
-
 });
 
 function ajaxActualizar(noticias){
@@ -172,19 +162,16 @@ function ajaxMethodUpdate(datosRss){
     type: 'POST',
     data: jsonData,
     success: function (response) {
-      console.log("hecho");
+      
     },
   });
 }
-
-//-----------------------------------------------------------------------------------------------------------------
 
 var imagen = "https://static.vecteezy.com/system/resources/previews/010/765/527/non_2x/retro-distressed-sticker-of-a-cartoon-newspaper-vector.jpg";
 
 const mostrarNoticias = (noticias) => {
   main.innerHTML = "";
   noticias.forEach((noticia) => {
-
     const parser = new DOMParser();
     const doc = parser.parseFromString(noticia.html, 'text/html');
     const imgs = doc.querySelectorAll('img');
@@ -195,36 +182,25 @@ const mostrarNoticias = (noticias) => {
     }else{
       elementoNoticia.innerHTML = '<img src="' + imagen + '" alt="' + noticia.titulo + '"/><div class="noticia-info"><h3>' + noticia.titulo + '</h3><span class="' + noticia.fecha + '">' + noticia.fecha + '</span></div><div class="overview"><h3>Descripción</h3>' + noticia.descripcion + '</br><a href="' + noticia.url + '">Leer más...</a>'+'</div>';
     }
-    
-
     main.appendChild(elementoNoticia);
   });
 };
 
-//-----------------------------------------------------------------------------------------------------------------
-
 $('#btnAgregarRSS').click(function () {
   var html = '';
   html += '<div id="inputFormRow">';
- // html += '<input type="text" name="title[]" placeholder="Ingrese RSS" class="rss" aria-invalid="true"/> ';
   html += '<input type="text" name="title[]" placeholder="Ingrese RSS" class="rss"/> ';
   html += '<input type="button" id="btnQuitarRSS" value="-" class="btnInteraccion" />';
   html += '</div>';
-
   $('#nuevoInput').append(html);
-
 });
 
 $(document).on('click', '#btnQuitarRSS', function () {
   $(this).closest('#inputFormRow').remove();
 });
 
-//-----------------------------------------------------------------------------------------------------------------
-
 function ajaxMethod(inputValue, rssInput){
-
   const jsonData = { "url": inputValue };
-
   $.ajax({
     url: "https://rssapi-production.up.railway.app/rss",
     type: 'POST',
@@ -251,8 +227,6 @@ $('#btnAgregar').click(function () {
   loading.style.display = "block";
   ajaxAgregar();
   setTimeout(verificarDatos, 4000);
-
-
 });
 
 function ajaxAgregar(){
@@ -301,7 +275,6 @@ function verificarDatos(){
       allowOutsideClick: false,
     })
   }
-
 }
 
 $('#btnCerrarModal').click(function () {
@@ -309,8 +282,6 @@ $('#btnCerrarModal').click(function () {
   $("#rss").removeAttr('aria-invalid');
   document.getElementById("nuevoInput").innerHTML="";
 });
-
-//-----------------------------------------------------------------------------------------------------------------
 
 document.getElementById("styledSelect1").addEventListener("change", filtroSeleccionado);
 
@@ -331,8 +302,6 @@ function filtroSeleccionado() {
     }
   });
 }
-
-//-----------------------------------------------------------------------------------------------------------------
 
 $('#anterior').click(function () {
   var filtroSeleccionado = document.getElementById("styledSelect1").value;
@@ -397,5 +366,3 @@ $('#siguiente').click(function () {
     }
   });
 });
-
-//-----------------------------------------------------------------------------------------------------------------
