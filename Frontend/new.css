@@ -156,62 +156,32 @@ margin:10px;
 .custom-select select {
 border:none;
 outline:none;
-position: relative;
 background:var(--secondary-color);
 -webkit-appearance:none;
 -moz-appearance:none;
 appearance:none;
 border-radius:0;
 display:block;
-width:10%;
+width:100%;
 font-size:18px;
 color:#fff;
 margin:0;
 padding:12px 55px 15px 15px;
-left: 20px;
 }
 
 .exmodal{
     background-color: rgba(55, 59, 105, 1);
     color: white;
-    display: flexbox;
 }
 
 .exmodal h1{
     font-size: large;
 }
 
-
 .modal-content {
 background:#373b69;
 color:#fff;
 }
-
-.modal-header{
-    margin: 0px 0px 10px 0px;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.modal-body{
-    margin: 0px 0px 15px 0px;
-    height: 100%;
-    display: inherit;
-    justify-content: space-between;
-}
-
-.modal-footer{
-    margin: 0px 0px 10px 0px;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.btn-close{
-    
-}
-
 
 .rss {
 margin-top:10px;
@@ -332,12 +302,11 @@ align-items:center;
 display:none;
 }
 
-@keyframes spinner {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+100% {
+    transform:rotate(360deg);
 }
 
-@media (max-width: 850px) {
+@media max-width 850px {
 header {
 flex-direction:column;
 }
