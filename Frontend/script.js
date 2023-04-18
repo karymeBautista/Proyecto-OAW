@@ -41,13 +41,26 @@ $(function () {
 })
 
 const exmodal = document.getElementById("exMainModal");
-const openExample = () => {
+
+const abrirModal = () => {
   exmodal.showModal();
 }
 
-const closeExample = ()  => {
+const cerrarModal = ()  => {
   exmodal.close();
 }
+
+$('#btnAgregarModal').click(function(){
+  abrirModal();
+});
+
+$('#btnClose').click(function(){
+  cerrarModal();
+});
+
+$('#btnCerrarModal').click(function(){
+  cerrarModal();
+});
 
 document.getElementById("search").onsearch = function () { buscar() };
 
@@ -224,6 +237,7 @@ function ajaxMethod(inputValue, rssInput){
 }
 
 $('#btnAgregar').click(function () {
+  cerrarModal();
   loading.style.display = "block";
   ajaxAgregar();
   setTimeout(verificarDatos, 4000);
