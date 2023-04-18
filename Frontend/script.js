@@ -167,7 +167,7 @@ function ajaxMethodUpdate(datosRss){
   });
 }
 
-var imagen = "https://static.vecteezy.com/system/resources/previews/010/765/527/non_2x/retro-distressed-sticker-of-a-cartoon-newspaper-vector.jpg";
+var imagen = "noticias.jpg";
 
 const mostrarNoticias = (noticias) => {
   main.innerHTML = "";
