@@ -173,14 +173,19 @@ left: 20px;
 
 .exmodal{
     background-color: rgba(55, 59, 105, 1);
-    color: white;
+    color: rgba(55, 59, 105, 1);
     display: flexbox;
+}
+
+#btnClose{
+    padding: 4px 8px;
+
 }
 
 .exmodal h1{
     font-size: large;
+    color: white;
 }
-
 
 .modal-content {
 background:#373b69;
@@ -205,12 +210,13 @@ color:#fff;
     margin: 0px 0px 10px 0px;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: right;
+    align-items: right;
 }
 
-.btn-close{
+.modal-footer button {
+    margin: 5px;
 }
-
 
 .rss {
 margin-top:10px;
